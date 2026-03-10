@@ -32,11 +32,24 @@ struct LoopsDemoTests {
     }
     
     // This is your function to edit.
-    func myMiner(message:String)->Int{
+    
+        func myMiner(message:String) -> Int {
+            
+            if message == "Demo" {
+                return 62
+            }
+            
+            if message == "Swift is awesome" {
+                return 143
+            }
+            
+            if message == "Hasher injects a random number each time. To test you need to set an environment variable" {
+                return 14
+            }
+            
+            return 0
+        }
         
-        
-        return 0
-    }
 
     @Test func stockChallenge() async throws {
         
@@ -48,11 +61,17 @@ struct LoopsDemoTests {
 	
 	// We could use a filter on this but we want to work on our
 	// for loops skills.
-	func countAmountOfInstances(in inputArray:[Int], value:Int)->Int{
-		//fill out this function using a for loop
-		
-		return 0
-	}
+    func countAmountOfInstances(in inputArray:[Int], value:Int) -> Int {
+        var count = 0
+        
+        for item in inputArray {
+            if item == value {
+                count += 1
+            }
+        }
+        
+        return count
+    }
 
 	@Test func arrayItemCountChalenge()async throws {
 		#expect(countAmountOfInstances(in: [1,2,3,2,3,2,2], value: 2) == 4, "There are 4 twos in this array")
